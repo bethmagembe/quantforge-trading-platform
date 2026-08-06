@@ -1,5 +1,9 @@
 # Portfolio Trading System
 
+<img width="1512" height="857" alt="image" src="https://github.com/user-attachments/assets/065a23ea-f2ed-4ac4-81f6-8adc575a6fe2" />
+
+
+
 A production-style, non-AI trading research platform for ingesting market data, testing rule-based strategies, measuring portfolio risk, storing longitudinal results in PostgreSQL, and generating end-of-day reports and alerts.
 
 > **Research and portfolio project only. It does not place live trades or provide financial advice.**
