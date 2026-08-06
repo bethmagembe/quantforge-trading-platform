@@ -240,7 +240,7 @@ The test suite covers:
 
 GitHub Actions runs linting and tests for every push and pull request.
 
-## Portfolio demo flow
+##  Flow
 
 1. Open the Streamlit dashboard.
 2. Select SMA, RSI, momentum, or buy-and-hold.
@@ -252,16 +252,6 @@ GitHub Actions runs linting and tests for every push and pull request.
 8. Open the generated end-of-day report.
 9. Show the PostgreSQL schema and ingestion benchmark.
 
-## Resume language
-
-Use measured, defensible language. After running the included workflows, an accurate version could be:
-
-- Built a chunked Python market-data pipeline that processed 2M+ simulated intraday records per benchmark run and normalized multi-asset OHLCV data for downstream research.
-- Developed a no-look-ahead backtesting engine for SMA, RSI, momentum, and buy-and-hold strategies across five-year datasets, incorporating transaction costs, slippage, benchmark comparison, and portfolio risk metrics.
-- Designed a PostgreSQL schema for market bars, ingestion lineage, strategies, orders, trades, positions, snapshots, performance metrics, and alerts, enabling longitudinal strategy analysis.
-- Automated HTML/JSON end-of-day reports and configurable market, volume, and drawdown alerts, with optional SMTP delivery and an interactive Streamlit dashboard.
-
-Only say the system was validated on **real** five-year historical data after you have downloaded, documented, and successfully tested an actual historical dataset. Only quote time savings after measuring the previous and automated workflows.
 
 ## Future extensions
 
