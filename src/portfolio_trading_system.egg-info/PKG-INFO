@@ -1,3 +1,26 @@
+Metadata-Version: 2.4
+Name: portfolio-trading-system
+Version: 2.0.0
+Summary: Multi-asset market-data, backtesting, risk, reporting, and alerting platform
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi<1,>=0.115
+Requires-Dist: jinja2<4,>=3.1
+Requires-Dist: numpy<3,>=2.0
+Requires-Dist: pandas<3,>=2.2
+Requires-Dist: plotly<7,>=5.24
+Requires-Dist: psycopg[binary]<4,>=3.2
+Requires-Dist: pydantic<3,>=2.9
+Requires-Dist: sqlalchemy<3,>=2.0
+Requires-Dist: streamlit<2,>=1.40
+Requires-Dist: uvicorn[standard]<1,>=0.32
+Provides-Extra: dev
+Requires-Dist: pytest<10,>=8; extra == "dev"
+Requires-Dist: httpx<1,>=0.27; extra == "dev"
+Requires-Dist: ruff<1,>=0.8; extra == "dev"
+Provides-Extra: market-data
+Requires-Dist: yfinance<1,>=0.2.50; extra == "market-data"
+
 # Portfolio Trading System
 
 A production-style, non-AI trading research platform for ingesting market data, testing rule-based strategies, measuring portfolio risk, storing longitudinal results in PostgreSQL, and generating end-of-day reports and alerts.
