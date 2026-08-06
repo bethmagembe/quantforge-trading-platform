@@ -1,0 +1,8 @@
+{
+  "rows_processed": 2000000,
+  "symbols": 100,
+  "chunk_size": 250000,
+  "elapsed_seconds": 0.7235,
+  "rows_per_second": 2764453.3,
+  "aggregated_bars": 100
+}

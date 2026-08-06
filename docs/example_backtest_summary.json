@@ -1,0 +1,34 @@
+{
+  "strategy": "sma_crossover",
+  "parameters": {
+    "short_window": 20,
+    "long_window": 100,
+    "name": "sma_crossover"
+  },
+  "metrics": {
+    "total_return": -0.1409726426286555,
+    "cagr": -0.02993374133461235,
+    "annualized_return": -0.02493286976697045,
+    "annualized_volatility": 0.104437786733815,
+    "sharpe_ratio": -0.23873418373483832,
+    "sortino_ratio": -0.3113297299261023,
+    "max_drawdown": -0.35152682643185074,
+    "calmar_ratio": -0.08515350489307677,
+    "win_rate": 0.44047619047619047,
+    "profit_factor": 0.9555611378974065,
+    "turnover": 85.0,
+    "trade_count": 85,
+    "ending_equity": 85902.73573713446,
+    "benchmark_total_return": 0.17541210349402814,
+    "excess_return": -0.31638474612268364
+  },
+  "symbols": [
+    "BTC-USD",
+    "GLD",
+    "QQQ",
+    "SPY",
+    "TLT"
+  ],
+  "start": "2021-10-08",
+  "end": "2026-08-06"
+}
