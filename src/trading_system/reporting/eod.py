@@ -12,7 +12,6 @@ from jinja2 import Template
 from trading_system.alerts.rules import Alert
 from trading_system.engine.backtester import BacktestResult
 
-
 HTML_TEMPLATE = Template(
     """
 <!doctype html>

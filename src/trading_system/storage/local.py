@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from trading_system.engine.backtester import BacktestResult
@@ -13,7 +13,7 @@ class LocalArtifactRepository:
         self.root.mkdir(parents=True, exist_ok=True)
 
     def save_backtest(self, result: BacktestResult) -> Path:
-        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
         run_dir = self.root / f"{result.strategy_name}-{stamp}"
         run_dir.mkdir(parents=True, exist_ok=True)
         (run_dir / "summary.json").write_text(

@@ -10,7 +10,6 @@ from trading_system.data import generate_daily_market_data
 from trading_system.engine import Backtester
 from trading_system.strategies import create_strategy
 
-
 app = FastAPI(title="Trading Research API", version="2.0.0")
 
 

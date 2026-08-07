@@ -6,10 +6,10 @@ from .rsi import RSIMeanReversionStrategy
 from .sma import SMACrossoverStrategy
 
 __all__ = [
-    "Strategy",
     "BuyAndHoldStrategy",
     "MomentumStrategy",
     "RSIMeanReversionStrategy",
     "SMACrossoverStrategy",
+    "Strategy",
     "create_strategy",
 ]

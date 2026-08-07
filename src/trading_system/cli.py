@@ -62,7 +62,9 @@ def run_benchmark(args: argparse.Namespace) -> None:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="trading-system", description="Multi-asset trading research platform")
+    parser = argparse.ArgumentParser(
+        prog="trading-system", description="Multi-asset trading research platform"
+    )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     data_parser = subparsers.add_parser("generate-data", help="Create an offline five-year synthetic dataset")

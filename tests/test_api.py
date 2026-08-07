@@ -2,7 +2,6 @@ from fastapi.testclient import TestClient
 
 from trading_system.api import app
 
-
 client = TestClient(app)
 
 

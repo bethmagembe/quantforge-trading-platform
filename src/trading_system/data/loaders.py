@@ -4,7 +4,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 CANONICAL_COLUMNS = [
     "timestamp",
     "symbol",
@@ -69,7 +68,9 @@ def download_yfinance(symbols: list[str], period: str = "5y") -> pd.DataFrame:
         raw["symbol"] = symbol.upper()
         raw["asset_class"] = "unknown"
         raw["source"] = "yfinance"
-        frames.append(raw[["timestamp", "symbol", "asset_class", "open", "high", "low", "close", "volume", "source"]])
+        frames.append(
+            raw[["timestamp", "symbol", "asset_class", "open", "high", "low", "close", "volume", "source"]]
+        )
 
     if not frames:
         raise ValueError("No market data was downloaded")

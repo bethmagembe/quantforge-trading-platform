@@ -3,13 +3,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-import numpy as np
 import pandas as pd
 
 from trading_system.config import BacktestConfig
 from trading_system.strategies.base import Strategy
-from .metrics import calculate_metrics
 
+from .metrics import calculate_metrics
 
 REQUIRED_COLUMNS = {
     "timestamp",
@@ -105,7 +104,9 @@ class Backtester:
             trade_count=len(trades),
         )
         metrics["ending_equity"] = float(daily["equity"].iloc[-1])
-        metrics["benchmark_total_return"] = float(daily["benchmark_equity"].iloc[-1] / self.config.initial_capital - 1.0)
+        metrics["benchmark_total_return"] = float(
+            daily["benchmark_equity"].iloc[-1] / self.config.initial_capital - 1.0
+        )
         metrics["excess_return"] = float(metrics["total_return"] - metrics["benchmark_total_return"])
 
         return BacktestResult(

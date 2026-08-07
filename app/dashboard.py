@@ -19,7 +19,6 @@ from trading_system.data import generate_daily_market_data, load_csv
 from trading_system.engine import Backtester
 from trading_system.strategies import create_strategy
 
-
 st.set_page_config(page_title="Portfolio Trading Lab", page_icon="📈", layout="wide")
 st.title("📈 Portfolio Trading Lab")
 st.caption("Interactive multi-asset backtesting, risk analysis, trade review, and operational alerts.")
@@ -77,7 +76,7 @@ if run_clicked:
         result = Backtester(config).run(bars, strategy)
         st.session_state["bars"] = bars
         st.session_state["result"] = result
-    except Exception as exc:
+    except Exception as exc: # noqa: BLE001
         st.error(str(exc))
 
 if "result" not in st.session_state:
@@ -107,11 +106,17 @@ with performance_tab:
         var_name="series",
         value_name="value",
     )
-    figure = px.line(equity, x="timestamp", y="value", color="series", title="Strategy vs equal-weight benchmark")
+    figure = px.line(
+        equity, x="timestamp", y="value", color="series", title="Strategy vs equal-weight benchmark"
+    )
     figure.update_layout(yaxis_title="Portfolio value", xaxis_title=None, legend_title=None)
     st.plotly_chart(figure, use_container_width=True)
 
-    monthly = result.equity_curve.set_index("timestamp")["strategy_return"].resample("ME").apply(lambda values: (1 + values).prod() - 1)
+    monthly = (
+        result.equity_curve.set_index("timestamp")["strategy_return"]
+        .resample("ME")
+        .apply(lambda values: (1 + values).prod() - 1)
+    )
     monthly_frame = monthly.to_frame("return")
     monthly_frame["year"] = monthly_frame.index.year
     monthly_frame["month"] = monthly_frame.index.strftime("%b")
@@ -125,7 +130,9 @@ with trades_tab:
     if result.trades.empty:
         st.warning("This configuration did not generate any trades.")
     else:
-        st.dataframe(result.trades.sort_values("timestamp", ascending=False), use_container_width=True, hide_index=True)
+        st.dataframe(
+            result.trades.sort_values("timestamp", ascending=False), use_container_width=True, hide_index=True
+        )
         st.download_button(
             "Download trades CSV",
             result.trades.to_csv(index=False),

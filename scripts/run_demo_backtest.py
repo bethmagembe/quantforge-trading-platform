@@ -10,9 +10,9 @@ from trading_system.strategies import SMACrossoverStrategy
 
 def main() -> None:
     bars = generate_daily_market_data(years=5, seed=42)
-    result = Backtester(
-        BacktestConfig(initial_capital=100_000, commission_bps=2, slippage_bps=1)
-    ).run(bars, SMACrossoverStrategy(short_window=20, long_window=100))
+    result = Backtester(BacktestConfig(initial_capital=100_000, commission_bps=2, slippage_bps=1)).run(
+        bars, SMACrossoverStrategy(short_window=20, long_window=100)
+    )
     print(json.dumps(result.summary(), indent=2, default=str))
 
 
